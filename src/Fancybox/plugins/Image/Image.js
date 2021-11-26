@@ -196,7 +196,7 @@ export class Image {
     });
 
     $image.src = slide.src;
-    $image.alt = "";
+    $image.alt = "test";
     $image.draggable = false;
 
     $image.classList.add("fancybox__image");
