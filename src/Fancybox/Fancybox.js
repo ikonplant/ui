@@ -824,6 +824,9 @@ class Fancybox extends Base {
 
     const $el = slide.$el;
 
+    const $title = document.createElement("h1");
+    $title.innerHTML = slide.title;
+
     if (html instanceof HTMLElement) {
       if (["img", "iframe", "video", "audio"].indexOf(html.nodeName.toLowerCase()) > -1) {
         $content = document.createElement("div");
@@ -836,6 +839,10 @@ class Fancybox extends Base {
 
       $content = document.createElement("div");
       $content.appendChild($fragment);
+    }
+
+    if (typeof slide.title !== 'undefined' && slide.title !=='') {
+      $content.prepend($title);
     }
 
     if (slide.filter && !slide.error) {
